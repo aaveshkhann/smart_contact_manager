@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+           th:replace="~{user/app::Layout(~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <section>
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center border-bottom mb-3">
+            <h1 class="h2">Update Contact</h1>
+        </div>
+        <form th:action="@{/user/updateForm}"   method="post" >
+            
+            <div class="row mb-3"></div>
+                <!-- Name -->
+                <div class="col-md-8">
+                    
+                    <input th:value="${contact.cId}" type="hidden" class="form-control" id="cId" name="cId" placeholder="Enter name" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <!-- Name -->
+                <div class="col-md-8">
+                    <label for="name" class="form-label">Name</label>
+                    <input th:value="${contact.cName}" type="text" class="form-control" id="name" name="cName" placeholder="Enter name" required>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <!-- Phone -->
+                <div class="col-md-8">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input th:value="${contact.phone}" type="text" class="form-control" id="phone" name="phone" placeholder="Enter phone number" required>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <!-- Email -->
+                <div class="col-md-8">
+                    <label for="email" class="form-label">Email</label>
+                    <input th:value="${contact.email}" type="email" class="form-control" id="email" name="email" placeholder="Enter email address" required>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <!-- Work -->
+                <div class="col-md-8">
+                    <label for="work" class="form-label">Work</label>
+                    <input th:value="${contact.work}" type="text" class="form-control" id="work" name="work" placeholder="Enter work details">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <!-- Description -->
+                <div class="col-md-8">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea th:text="${contact.description}" class="form-control" id="description" name="description" rows="10" placeholder="Enter description"></textarea>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-dark mb-3">Update Contact</button>
+        </form>
+    </section> 
+</body>
+</html>
